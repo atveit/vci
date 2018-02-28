@@ -21,7 +21,7 @@ Sample output: see [output1_from_creating_etc_hosts_file_on_all_nodes.txt](outpu
 make runci
 ```
 
-Sample output: see [output2_from_deploying_application_cluster.txt](1_from_creating_etc_hosts_file_on_all_nodes.txt)
+Sample output: see [output2_from_deploying_application_cluster.txt](output2_from_deploying_application_cluster.txt)
 
 ## 3. login into admin node and check cluster state
 ```
@@ -35,7 +35,7 @@ music/storage/0: up
 music/storage/1: up
 ```
 
-Sample complete session and output: [output3_from_running_vespa_cluster_status_on_admin_node.txt](0_from_starting_vespa_cluster_before_application.txt)
+Sample complete session and output: [output3_from_running_vespa_cluster_status_on_admin_node.txt](output3_from_running_vespa_cluster_status_on_admin_node.txt)
 
 ## Appendix - Docker Compose file 
 ```
