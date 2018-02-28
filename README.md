@@ -1,5 +1,8 @@
 # vci
 
+## Prerequisites: 
+have a working docker-compose setup (this was tested on mac), might need user/login to docker.com etc.
+
 ## 0. create docker-compose cluster with 1x admin, 2x stateless and 2x content nodes (tested on macos)
 
 ```
