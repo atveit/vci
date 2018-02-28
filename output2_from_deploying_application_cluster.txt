@@ -1,0 +1,19 @@
+$ make runci
+docker-compose -f docker-compose-ci.yml exec admin0 /bin/bash /vespascripts/run-ci.sh
+copying changed configuration files (services and hosts) to support distributed vespa
+Wed Feb 28 22:09:03 UTC 2018
+waiting 15 seconds for vespa to come up - attempt: 1
+vespa-deploy prepare /vespaapp/basic-search/src/main/application/ && break
+Uploading application '/vespaapp/basic-search/src/main/application/' using http://admin0:19071/application/v2/tenant/default/session?name=application
+Session 2 for tenant 'default' created.
+Preparing session 2 using http://admin0:19071/application/v2/tenant/default/session/2/prepared
+Session 2 for tenant 'default' prepared.
+Activating session 2 using http://admin0:19071/application/v2/tenant/default/session/2/active
+Session 2 for tenant 'default' activated.
+Checksum:   f64047cf4a17624b98448c52bcf66362
+Timestamp:  1519855766704
+Generation: 2
+Checking Vespa Application Status on port 19071
+Checking Vespa Application Status on port 8080 (can take a few seconds)
+................................ 
+

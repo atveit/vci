@@ -1,0 +1,19 @@
+$ make shell
+docker-compose -f docker-compose-ci.yml exec admin0 /bin/bash
+[root@admin0 /]# cd /vespascripts/
+[root@admin0 vespascripts]# ls -tlr
+total 28
+-rw-r--r-- 1 root root  845 Feb 28 22:06 services.xml
+-rw-r--r-- 1 root root 1406 Feb 28 22:06 run-ci.sh
+-rw-r--r-- 1 root root  505 Feb 28 22:06 hosts.xml
+-rw-r--r-- 1 root root  159 Feb 28 22:06 create_hosts.sh
+
+[root@admin0 vespascripts]# export VESPA_APP=/vespaapp
+[root@admin0 vespascripts]# export PATH=/opt/vespa/bin:${PATH}
+[root@admin0 vespascripts]# vespa-get-cluster-state 
+
+Cluster music:
+music/distributor/0: up
+music/distributor/1: up
+music/storage/0: up
+music/storage/1: up

@@ -1,0 +1,17 @@
+$ make ci
+rm -f sample-apps
+git clone https://github.com/vespa-engine/sample-apps.git
+Cloning into 'sample-apps'...
+remote: Counting objects: 1348, done.
+remote: Compressing objects: 100% (87/87), done.
+remote: Total 1348 (delta 150), reused 178 (delta 121), pack-reused 1140
+Receiving objects: 100% (1348/1348), 1.83 MiB | 483.00 KiB/s, done.
+Resolving deltas: 100% (720/720), done.
+sudo docker-compose -f docker-compose-ci.yml up -d # -d # with/without -d??
+Password:
+Creating network "vci_default" with the default driver
+Creating vci_admin0_1     ... done
+Creating vci_stateless0_1 ... done
+Creating vci_stateless1_1 ... done
+Creating vci_content1_1   ... done
+Creating vci_content0_1   ... done

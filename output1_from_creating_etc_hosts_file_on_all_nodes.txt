@@ -1,0 +1,56 @@
+$ make cihosts
+docker-compose -f docker-compose-ci.yml exec admin0 /bin/bash /vespascripts/create_hosts.sh
+host admin0 =
+admin0 has address 172.18.0.5
+host content0 =
+content0 has address 172.18.0.6
+host content1 =
+content1 has address 172.18.0.4
+host stateless0 =
+stateless0 has address 172.18.0.2
+host stateless1 =
+stateless1 has address 172.18.0.3
+docker-compose -f docker-compose-ci.yml exec stateless0 /bin/bash /vespascripts/create_hosts.sh
+host admin0 =
+admin0 has address 172.18.0.5
+host content0 =
+content0 has address 172.18.0.6
+host content1 =
+content1 has address 172.18.0.4
+host stateless0 =
+stateless0 has address 172.18.0.2
+host stateless1 =
+stateless1 has address 172.18.0.3
+docker-compose -f docker-compose-ci.yml exec stateless1 /bin/bash /vespascripts/create_hosts.sh
+host admin0 =
+admin0 has address 172.18.0.5
+host content0 =
+content0 has address 172.18.0.6
+host content1 =
+content1 has address 172.18.0.4
+host stateless0 =
+stateless0 has address 172.18.0.2
+host stateless1 =
+stateless1 has address 172.18.0.3
+docker-compose -f docker-compose-ci.yml exec content0 /bin/bash /vespascripts/create_hosts.sh
+host admin0 =
+admin0 has address 172.18.0.5
+host content0 =
+content0 has address 172.18.0.6
+host content1 =
+content1 has address 172.18.0.4
+host stateless0 =
+stateless0 has address 172.18.0.2
+host stateless1 =
+stateless1 has address 172.18.0.3
+docker-compose -f docker-compose-ci.yml exec content1 /bin/bash /vespascripts/create_hosts.sh
+host admin0 =
+admin0 has address 172.18.0.5
+host content0 =
+content0 has address 172.18.0.6
+host content1 =
+content1 has address 172.18.0.4
+host stateless0 =
+stateless0 has address 172.18.0.2
+host stateless1 =
+stateless1 has address 172.18.0.3

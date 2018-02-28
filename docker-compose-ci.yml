@@ -1,0 +1,62 @@
+version: '3'
+
+services:
+  admin0:
+    image: vespaengine/vespa # centos:7
+    hostname: admin0
+    volumes:
+      - ./sample-apps:/vespaapp
+      - ./vespascripts:/vespascripts
+    environment:
+    - VESPA_CONFIGSERVERS=admin0
+#    stdin_open: true
+#    tty: true
+    entrypoint: /usr/local/bin/start-container.sh
+    command: configserver 
+
+  stateless0:
+    image: vespaengine/vespa # centos:7
+    hostname: stateless0
+    volumes:
+      - ./sample-apps:/vespaapp
+      - ./vespascripts:/vespascripts
+    environment:
+    - VESPA_CONFIGSERVERS=admin0
+    entrypoint: /usr/local/bin/start-container.sh
+    command: services
+
+  content0:
+    image: vespaengine/vespa # centos:7
+    hostname: content0
+    volumes:
+      - ./sample-apps:/vespaapp
+      - ./vespascripts:/vespascripts
+    environment:
+    - VESPA_CONFIGSERVERS=admin0
+    entrypoint: /usr/local/bin/start-container.sh
+    command: services
+
+  stateless1:
+    image: vespaengine/vespa # centos:7
+    hostname: stateless1
+    volumes:
+      - ./sample-apps:/vespaapp
+      - ./vespascripts:/vespascripts
+    environment:
+    - VESPA_CONFIGSERVERS=admin0
+    entrypoint: /usr/local/bin/start-container.sh
+    command: services
+
+  content1:
+    image: vespaengine/vespa # centos:7
+    hostname: content1
+    volumes:
+      - ./sample-apps:/vespaapp
+      - ./vespascripts:/vespascripts
+    environment:
+    - VESPA_CONFIGSERVERS=admin0
+    entrypoint: /usr/local/bin/start-container.sh
+    command: services
+
+
+
