@@ -9,8 +9,6 @@ services:
       - ./vespascripts:/vespascripts
     environment:
     - VESPA_CONFIGSERVERS=admin0
-#    stdin_open: true
-#    tty: true
     entrypoint: /usr/local/bin/start-container.sh
     command: configserver 
 
