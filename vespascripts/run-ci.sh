@@ -22,8 +22,8 @@ while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:19071/Application
     sleep 3; 
 done
 
-printf 'Checking Vespa Application Status on port 8080 (can take a few seconds)\n'
-while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:8080/ApplicationStatus)" != "200" ]]; do 
+printf 'Checking Vespa Application Status on port 8080 on stateless0 (can take a few seconds)\n'
+while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' http://stateless0:8080/ApplicationStatus)" != "200" ]]; do 
     printf '.'
     sleep 3; 
 done
