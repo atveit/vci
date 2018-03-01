@@ -17,7 +17,7 @@ done
 
 vespa-deploy activate 
 printf 'Checking Vespa Application Status on port 19071\n'
-while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' localhost:19071/ApplicationStatus)" != "200" ]]; do 
+while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' admin0:19071/ApplicationStatus)" != "200" ]]; do 
     printf '.'
     sleep 3; 
 done
@@ -28,8 +28,8 @@ while [[ "$(curl -s -o /dev/null -w ''%{http_code}'' http://stateless0:8080/Appl
     sleep 3; 
 done
 
-curl -s -X POST --data-binary @${VESPA_APP}/basic-search/music-data-1.json http://localhost:8080/document/v1/music/music/docid/1 | python -m json.tool
-curl -s -X POST --data-binary @${VESPA_APP}/basic-search/music-data-2.json http://localhost:8080/document/v1/music/music/docid/2 | python -m json.tool
-curl -s http://localhost:8080/search/?query=bad | python -m json.tool
+curl -s -X POST --data-binary @${VESPA_APP}/basic-search/music-data-1.json http://stateless0:8080/document/v1/music/music/docid/1 | python -m json.tool
+curl -s -X POST --data-binary @${VESPA_APP}/basic-search/music-data-2.json http://stateless0:8080/document/v1/music/music/docid/2 | python -m json.tool
+curl -s http://stateless0:8080/search/?query=bad | python -m json.tool
 
 
