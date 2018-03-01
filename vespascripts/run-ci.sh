@@ -3,9 +3,16 @@
 export VESPA_APP=/vespaapp
 export PATH=/opt/vespa/bin:${PATH}
 
+if [ -z "$1" ]; then
+    export VESPA_APP_NAME="basic-search"
+else
+    export VESPA_APP_NAME="$1"
+fi
+
+
 echo "copying changed configuration files (services and hosts) to support distributed vespa"
-cp /vespascripts/services.xml ${VESPA_APP}/basic-search/src/main/application
-cp /vespascripts/hosts.xml ${VESPA_APP}/basic-search/src/main/application
+cp /vespascripts/services.xml ${VESPA_APP}/${VESPA_APP_NAME}/src/main/application
+cp /vespascripts/hosts.xml ${VESPA_APP}/${VESPA_APP_NAME}/src/main/application
 
 for i in 1 2 3 4 5 6 7 8 9 10; do 
     date
